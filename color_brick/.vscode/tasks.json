@@ -1,0 +1,48 @@
+{
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "build",
+      "command": "g++",
+      "args": [
+        "-I","${workspaceFolder}/include/",
+        "-I","${fileBasenameNoExtension}/include",
+        "-I", "/usr/local/include",
+        "-I", "/usr/local/include/opencv",
+        "-I", "/usr/local/include/opencv2",
+        "-L", "/usr/local/lib",
+        "-g",
+        "${workspaceFolder}/src/serialport.cpp",
+        "${file}",
+        "-o",
+        "${fileDirname}/main",          
+        "-l", "opencv_calib3d",
+        "-l", "opencv_core",
+        "-l", "opencv_dnn",
+        "-l", "opencv_features2d",
+        "-l", "opencv_flann",
+        "-l", "opencv_imgproc",
+        "-l", "opencv_imgcodecs",
+        "-l", "opencv_video",
+        "-l", "opencv_ml",
+        "-l", "opencv_highgui",
+        "-l", "opencv_objdetect",
+        "-l", "opencv_photo",
+        "-l", "opencv_shape",
+        "-l", "opencv_stitching",
+        "-l", "opencv_superres",
+        "-l", "opencv_videostab",
+        "-l", "opencv_videoio",
+        "/lib/libMVSDK.so"
+      ],
+      "options": {
+        "cwd": "/usr/bin"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ],
+  "version": "2.0.0"
+}
